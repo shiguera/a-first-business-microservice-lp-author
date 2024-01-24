@@ -36,10 +36,10 @@ async fn handle_request(req: Request<Body>) -> Result<Response<Body>, anyhow::Er
                 *response.status_mut()=StatusCode::NOT_FOUND;
                 Ok(response)
                 /* Other solution: 
-                let mut response = Response::new(Body::from("ZIP CODE NOT FOUND"));
-                let (mut parts, body) = response.into_parts();
-                parts.status = StatusCode::NOT_FOUND;
-                let response = Response::from_parts(parts, body); */
+                        let mut response = Response::new(Body::from("ZIP CODE NOT FOUND"));
+                        let (mut parts, body) = response.into_parts();
+                        parts.status = StatusCode::NOT_FOUND;
+                        let response = Response::from_parts(parts, body); */
                 /* Solution from the course:
                         if rate.is_empty() {
                             let mut not_found = Response::default();
