@@ -39,6 +39,15 @@ async fn handle_request(req: Request<Body>) -> Result<Response<Body>, anyhow::Er
                 let (mut parts, body) = response.into_parts();
                 parts.status = StatusCode::NOT_FOUND;
                 let response = Response::from_parts(parts, body); */
+                /* Solution from the course:
+                        if rate.is_empty() {
+                            let mut not_found = Response::default();
+                            *not_found.status_mut() = StatusCode::NOT_FOUND;
+                            Ok(not_found)
+                        } else {
+                            Ok(Response::new(Body::from(rate)))
+                        }
+                */
             }
         }
 
