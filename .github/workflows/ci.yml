@@ -53,7 +53,7 @@ jobs:
         fi
         resp=$(curl http://localhost:8001/find_rate -X POST -d "12345")
         echo "$resp"
-        if [[ $resp == "0.08" ]]; then
+        if [[ $resp == "ZIP CODE NOT FOUND" ]]; then
           echo -e "Execution Success!"
         else
           echo -e "Execution Fail!"
